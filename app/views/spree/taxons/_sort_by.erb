@@ -1,0 +1,22 @@
+  <select id='dynamic_select'>
+     <option value='' selected>Sort by</option>
+     <option value='<%= path_to request.path , params.merge(:sort_by => "price") %>' >price asc</option>
+     <option value='<%= path_to request.path , params.merge(:sort_by => "price_desc") %>'>price desc</option>
+     <option value='<%= path_to request.path , params.merge(:sort_by => "name") %>'>name asc</option>
+     <option value='<%= path_to request.path , params.merge(:sort_by => "name_desc") %>'>name desc</option>
+     <option value='<%= path_to request.path , params.merge(:sort_by => "relevance") %>'>relevance</option>
+     <option value='<%= path_to request.path , params.merge(:sort_by => "relevance_desc") %>'>relevance desc</option>
+ </select>
+
+  <script>
+     $(function(){
+       // bind change event to select
+       $('#dynamic_select').bind('change', function () {
+           var url = $(this).val(); // get selected value
+           if (url) { // require a URL
+               window.location = url; // redirect
+           }
+           return false;
+       });
+     }); 
+ </script>
