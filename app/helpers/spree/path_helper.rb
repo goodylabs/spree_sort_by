@@ -1,4 +1,3 @@
-
 module Spree::PathHelper
   # defines dynamic path for sort by box
   def path_to(*args, &block)
