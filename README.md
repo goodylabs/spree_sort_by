@@ -1,7 +1,14 @@
 SpreeSortBy
 ===========
 
-Introduction goes here.
+Add this line to your application.rb file
+
+```ruby
+   #Hash that maps url param to model attributes for search
+    config.sort_params = {"relevance" => "spree_products.sort_position ASC", "relevance_desc" => "spree_products.sort_position DESC", "price" => "spree_prices.amount ASC","price_desc" => "spree_prices.amount DESC", "name" => "spree_products.name", "name_desc" => "spree_products.name DESC" }
+
+```
+
 
 Installation
 ------------
@@ -17,24 +24,6 @@ Bundle your dependencies and run the installation generator:
 ```shell
 bundle
 bundle exec rails g spree_sort_by:install
-```
-
-Testing
--------
-
-Be sure to bundle your dependencies and then create a dummy test app for the specs to run against.
-
-```shell
-bundle
-bundle exec rake test_app
-bundle exec rspec spec
-```
-
-When testing your applications integration with this extension you may use it's factories.
-Simply add this require statement to your spec_helper:
-
-```ruby
-require 'spree_sort_by/factories'
 ```
 
 Copyright (c) 2013 [name of extension creator], released under the New BSD License
